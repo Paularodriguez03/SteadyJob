@@ -11,11 +11,15 @@ class Developer extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+        //donde un registro pertenece a otro registro uno a uno
+        //developer y user tiene una relacion de uno a uno
     }
     //skills
     public function skills()
     {
         return $this->belongsToMany(Skill::class);
+        //belongsToMany -> relacion de muchos
+        //muchos developers tienen muchas skills
     }
     //education
     public function education(){

@@ -12,5 +12,7 @@ class Education extends Model
 
     public function developers(){
         return $this->belongsToMany(Developer::class);
+        //muchos muchos
+        //la tabla educacion tiene muchos developrs y viceversa
     }
 }

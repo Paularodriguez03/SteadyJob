@@ -102,7 +102,9 @@ class EducationController extends Controller
      */
     public function store(Request $request)
     {
+        //agregar otra educación
         $userId = Auth::id();
+        //trahe el id del ususario
         $career = $request->get('career');
         $level = $request->get('level');
         //get
@@ -179,6 +181,7 @@ class EducationController extends Controller
         return view('developer.education',[
             'education' => $education,
             'level' => $level,
+            //mandar los arrays a la vista de educación
         ]);
     }
 

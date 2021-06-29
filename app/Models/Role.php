@@ -9,4 +9,5 @@ class Role extends Model
 {
     use HasFactory;
     protected $fillable = ['name'];
+    //Proteje la vista segunel rol
 }

@@ -12,9 +12,11 @@ class Tecnology extends Model
     public function vacancy()
     {
         return $this->belongsToMany(Vacancy::class);
+        //muchas tegnologias tiene  muchas vacantes
     }
     public function developer()
     {
         return $this->belongsToMany(Developer::class);
+        //muchas tecnologías tiene muchos developers
     }
 }

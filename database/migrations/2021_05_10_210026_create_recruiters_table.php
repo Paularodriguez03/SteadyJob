@@ -23,6 +23,7 @@ class CreateRecruitersTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on("users")
+            //tienes la llave foranea user-id con referencia en is de la tabla users
             ->onDelete('cascade')
             ->onUpdate('cascade');
 

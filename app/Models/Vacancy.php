@@ -11,13 +11,16 @@ class Vacancy extends Model
 
     public function recrutier(){
         return $this->belongsTo(Recruiter::class);
+        //una vacante tiene un reclutador
     }
 
     public function tecno(){
         return $this->hasMany(Tecnology::class);
+        //una vacante tiene varias tecnologías
     }
     public function developers(){
         return $this->belongsToMany(Developer::class);
+        //muchas vacnates tiene muchos developers
     }
 
 }

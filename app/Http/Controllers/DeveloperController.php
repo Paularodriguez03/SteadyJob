@@ -19,9 +19,11 @@ class DeveloperController extends Controller
     public function index()
     {
         $developers = DB::table('developers')
-                        ->join('users','users.id', 'developers.user_id')
-                        ->select('developers.*','users.profile_photo_path')               
-                        ->get();
+            ->join('users','users.id', 'developers.user_id')
+            //desde  la tabla developers hacer join en la tabla users
+            //donde la llave foranea developers.user_id  sea igual a la llave primaria users.id
+            ->select('developers.*','users.profile_photo_path')               
+            ->get();
     
         // dd($developers);
         return view("developer.index", ['developers'=>$developers]);

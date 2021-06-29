@@ -65,6 +65,7 @@ class User extends Authenticatable //implements MustVerifyEmail
 
     public function profile_recruiter(){
         return $this->hasOne(Recruiter::class);
+        //un usuario tiene un perfoli de reclutador
     }
 
     public function adminlte_desc(){

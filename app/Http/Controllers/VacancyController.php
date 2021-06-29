@@ -19,16 +19,21 @@ class VacancyController extends Controller
     public function index(Request $request)
     {
         $data=$request->user();
+        //da appceso a los datos de la persona logeada
 
 
         $id_recrutier = DB::table('users')
         ->join('recruiters', 'users.id', '=', 'recruiters.user_id')
+        //desde la tabla usuario hacer un join en reclutador 
+        //donde la llave primaria sea igual a la foranea de reclutador
         ->where('recruiters.user_id','=',$data['id'])
+        //cuando el id de la tabla sea igual al de la session
         ->select('recruiters.id')
         ->get();
         if(!empty($id_recrutier[0]->id)){
             $vacantes = DB::table('vacancies')
             ->join('recruiters', 'vacancies.recrutier_id', '=', 'recruiters.id')
+            //
             ->where('recrutier_id','=',$id_recrutier[0]->id)
             ->select('vacancies.*')
             ->get();

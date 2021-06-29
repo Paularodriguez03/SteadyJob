@@ -12,10 +12,14 @@ class Recruiter extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+        //belongsTo de uno a uno
+        //un reclutador tiene un solo usuario
     }
 
     public function vacancies()
     {
         return $this->hasMany(Vacancy::class);
+        //de uno a muchos
+        //un reclutador tiene muchas vacantes
     }
 }

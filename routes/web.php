@@ -36,7 +36,7 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 
 Route::resource('/ofertas', JobDevController::class);
 
-Route::get('/ofert/filterBy', [FilterController::class,'filterby'])->name('filterby');
+Route::middleware(['auth:sanctum', 'verified'])->get('/ofert/filterBy', [FilterController::class,'filterby'])->name('filterby');
 
 Route::get('/nosotros', [PageController::class, 'nosotros'])->name('nosotros');
 
@@ -50,29 +50,29 @@ Route::get('/paraEmpresas', [PageController::class, 'paraEmpresas'])->name('para
 
 Route::get('/logros', [PageController::class, 'logros'])->name('logros');
 
-Route::resource('companydata', RecruiterController::class);
+Route::middleware(['auth:sanctum', 'verified'])->resource('companydata', RecruiterController::class);
 
-Route::get('/developerdata', [PageController::class, 'developerdata'])->name('developerdata');
+Route::middleware(['auth:sanctum', 'verified'])->get('/developerdata', [PageController::class, 'developerdata'])->name('developerdata');
 
-Route::resource('skills', SkillController::class);
+Route::middleware(['auth:sanctum', 'verified'])->resource('skills', SkillController::class);
 
-Route::resource('recruiter', RecruiterController::class);
+Route::middleware(['auth:sanctum', 'verified'])->resource('recruiter', RecruiterController::class);
 
-Route::resource('developer', DeveloperController::class);
+Route::middleware(['auth:sanctum', 'verified'])->resource('developer', DeveloperController::class);
 
-Route::resource('education', EducationController::class);
+Route::middleware(['auth:sanctum', 'verified'])->resource('education', EducationController::class);
 
-Route::resource('tecnologies', TecnologyController::class);
+Route::middleware(['auth:sanctum', 'verified'])->resource('tecnologies', TecnologyController::class);
 
-Route::resource('applications', ApplicationController::class);
+Route::middleware(['auth:sanctum', 'verified'])->resource('applications', ApplicationController::class);
 
 //Route::resource('candidates', CandidateController::class);
 
-Route::get('/board', [RecruiterController::class, 'board'])->name('board');
+Route::middleware(['auth:sanctum', 'verified'])->get('/board', [RecruiterController::class, 'board'])->name('board');
 
-Route::get('/editDeveloper', [PageController::class, 'editDeveloper'])->name('editdeveloper');
+Route::middleware(['auth:sanctum', 'verified'])->get('/editDeveloper', [PageController::class, 'editDeveloper'])->name('editdeveloper');
 
-Route::get('/candidates/{id:id}', [PageController::class, 'getCandidates'])->name('candidates');
+Route::middleware(['auth:sanctum', 'verified'])->get('/candidates/{id:id}', [PageController::class, 'getCandidates'])->name('candidates');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

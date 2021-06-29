@@ -13,5 +13,6 @@ class Skill extends Model
     public function developers()
     {
         return $this->belongsToMany(Developer::class);
+        //muchas skilss tienen muchos developers
     }
 }
