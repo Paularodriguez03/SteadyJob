@@ -108,9 +108,14 @@
                 </div>
             </div>
             <div class="mt-2 ">
-                <a href="{{route('applications.store')}}"><button 
-                    class="px-10 py-3 mx-20 font-semibold text-blue-600 duration-300 ease-in-out transform bg-blue-400 rounded-full shadow-lg hover:text-white hover:bg-blue-500 focus:outline-none dark:text-white dark:bg-green-500 dark:hover:bg-green-600 hover:scale-105"><i
-                    class="mr-2 -ml-2 mdi mdi-cart "></i> <i class="ml-2 fas fa-check"></i>Aplicar</button></a>
+                <form action="{{route('applications.store')}}" method="POST">
+                    @csrf
+                    <input id="vacancy_id" name="vacancy_id" type="hidden" value={{ $vacancy[0]->id }}>
+                    <button 
+                        type=submit
+                        class="px-10 py-3 mx-20 font-semibold text-blue-600 duration-300 ease-in-out transform bg-blue-400 rounded-full shadow-lg hover:text-white hover:bg-blue-500 focus:outline-none dark:text-white dark:bg-green-500 dark:hover:bg-green-600 hover:scale-105"><i
+                            class="mr-2 -ml-2 mdi mdi-cart "></i><i class="ml-2 fas fa-check"></i> Aplicar</button></a>
+                </form>
             </div>
         </div>
 
