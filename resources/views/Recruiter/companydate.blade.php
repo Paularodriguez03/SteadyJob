@@ -17,7 +17,7 @@
             @method('PUT')
             <div class="relative w-full py-4 mb-3 text-lg">
                 <label for="fullName" class="p-2 ">Nombre compañia</label>
-                <input id="namecompany" name="namecompany" type="text" class="w-full p-2 text-sm text-gray-700 placeholder-gray-400 bg-white border-0 rounded-full shadow dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 focus:outline-none" ¢ id="grid-first-name"
+                <input id="namecompany" name="namecompany" type="text" class="w-full p-2 text-sm text-gray-700 placeholder-gray-400 bg-white border-0 rounded-full shadow dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 focus:outline-none"  id="grid-first-name"
                     type="text" placeholder="Nombre de la compañia" tabindex="1" value="{{ $users[0]->NameCompany }}"
                     required>                
             </div>

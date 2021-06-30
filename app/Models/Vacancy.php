@@ -20,7 +20,7 @@ class Vacancy extends Model
     }
     public function developers(){
         return $this->belongsToMany(Developer::class);
-        //muchas vacnates tiene muchos developers
+        //muchas vacanates tiene muchos developers
     }
 
 }
